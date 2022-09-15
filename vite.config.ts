@@ -32,7 +32,6 @@ export default defineConfig(configEnv => {
         }
       }),
       AutoImport({
-        dts: './src/typings/auto-imports.d.ts',
         imports: ['vue'],
         eslintrc: {
           enabled: true,
@@ -41,7 +40,6 @@ export default defineConfig(configEnv => {
         }
       }),
       Components({
-        dts: './src/typings/components.d.ts',
         dirs: ['src/components']
       })
     ],
