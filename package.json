@@ -2,20 +2,73 @@
   "name": "basic-layout",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "build:vercel": "cross-env VITE_IS_VERCEL=1 vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --fix --ext .ts,.vue,.js",
+    "prettier": "prettier --write .",
+    "prepare": "husky install",
+    "commit": "git-cz"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "@unocss/reset": "^0.45.6",
+    "colord": "^2.9.3",
+    "css-render": "0.15.10",
+    "vue-demi": "^0.13.11"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.4.6",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@types/node": "^18.7.14",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
     "@vitejs/plugin-vue": "^3.1.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "commitizen": "^4.2.5",
+    "commitlint-config-cz": "^0.13.3",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
+    "eslint": "8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.4.0",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
     "typescript": "^4.6.4",
+    "unocss": "^0.45.21",
+    "unplugin-auto-import": "^0.11.2",
+    "unplugin-vue-components": "^0.22.7",
+    "unplugin-vue-define-options": "^0.11.2",
     "vite": "^3.1.0",
-    "vue-demi": "^0.13.11",
+    "vite-plugin-dts": "^1.5.0",
+    "vue": "^3.2.37",
     "vue-tsc": "^0.40.4"
+  },
+  "lint-staged": {
+    "*.{js,vue,css,scss}": [
+      "npm run lint",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   }
 }
