@@ -4,7 +4,6 @@ import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
 import DefineOptions from 'unplugin-vue-define-options/vite';
 import unocss from 'unocss/vite';
-import Components from 'unplugin-vue-components/vite';
 import AutoImport from 'unplugin-auto-import/vite';
 
 export default defineConfig(configEnv => {
@@ -38,9 +37,6 @@ export default defineConfig(configEnv => {
           filepath: './.eslintrc-auto-import.json',
           globalsPropValue: true
         }
-      }),
-      Components({
-        dirs: ['src/components']
       })
     ],
     optimizeDeps: {
