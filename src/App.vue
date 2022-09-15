@@ -1,7 +1,9 @@
 <template>
-  <div>basic-layout</div>
+  <basic-layout />
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import BasicLayout from './index.vue';
+</script>
 
 <style scoped></style>
