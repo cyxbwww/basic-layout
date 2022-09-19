@@ -31,7 +31,7 @@ export default defineConfig(configEnv => {
         }
       }),
       AutoImport({
-        imports: ['vue'],
+        imports: ['vue-demi'],
         eslintrc: {
           enabled: true,
           filepath: './.eslintrc-auto-import.json',
