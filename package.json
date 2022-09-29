@@ -1,8 +1,8 @@
 {
   "name": "@cyxbwww/basic-layout",
   "private": false,
-  "version": "0.0.5",
-  "author": "cyxbwww (18219326208@163.com)",
+  "version": "1.0.0",
+  "author": "cyxbwww <18219326208@163.com> (https://cyxbwww.github.io/)",
   "license": "MIT",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
